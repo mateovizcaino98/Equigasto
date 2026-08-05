@@ -1,6 +1,6 @@
 # 💰 EquiGasto
 
-> Una aplicación web para administrar gastos compartidos de forma clara, transparente y sencilla.
+### Una aplicación web para administrar gastos compartidos de forma clara, transparente y sencilla.
 
 ---
 
