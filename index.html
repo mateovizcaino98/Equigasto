@@ -7,16 +7,33 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- ENCABEZADO: identidad visual, logotipo, nombre y frase descriptiva de EquiGasto. -->
   <header>
     <a class="logo" href="#inicio"><span>E</span> EquiGasto</a>
     <p>Gastos grupales sin enredos</p>
   </header>
 
   <main id="inicio">
+    <!-- PANTALLA DE INICIO Y CREACIÓN DEL GRUPO: presentación e ingreso del nombre del grupo. -->
+    <section id="inicioAplicacion" class="inicio">
+      <div class="bienvenida">
+        <p class="etiqueta">CUENTAS CLARAS, AMISTADES LARGAS</p>
+        <h1>Dividir gastos no debería ser complicado.</h1>
+        <p>Registra quién pagó, incluye a quienes participaron y descubre cómo saldar las cuentas del grupo.</p>
+      </div>
+
+      <div class="tarjeta">
+        <p class="etiqueta">PASO 1 DE 3</p>
+        <h2>Crea tu grupo</h2>
+        <form id="formularioGrupo">
+          <label for="nombreGrupo">Nombre del grupo</label>
+          <input id="nombreGrupo" type="text" placeholder="Ej. Viaje a Cartagena">
+          <button type="submit">Crear grupo</button>
+        </form>
+        <p id="mensajeGrupo" class="mensaje"></p>
+      </div>
+    </section>
   </main>
 
-  <!-- PIE DE PÁGINA Y CONEXIÓN CON JAVASCRIPT: cierre visual y carga del comportamiento. -->
   <footer>Hecho para compartir, pensado para entender.</footer>
   <script src="script.js"></script>
 </body>
