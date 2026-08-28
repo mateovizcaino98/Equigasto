@@ -33,7 +33,6 @@
     </section>
 
     <section id="contenidoAplicacion" class="aplicacion oculto">
-      <!-- ENCABEZADO Y NAVEGACIÓN DE LA APLICACIÓN: nombre, reinicio y pestañas principales. -->
       <div class="encabezadoGrupo">
         <div>
           <p class="etiqueta">TU GRUPO</p>
@@ -48,7 +47,6 @@
         <button id="botonResumen" class="pestana" type="button">3. Resumen</button>
       </nav>
 
-      <!-- SECCIÓN DE INTEGRANTES: formulario, lista de personas registradas y cantidad. -->
       <section id="integrantes" class="dosPaneles">
         <div class="tarjeta">
           <p class="etiqueta">PASO 1</p>
@@ -64,6 +62,34 @@
           <div class="tituloLista"><h2>El grupo</h2><span id="numeroIntegrantes">0 personas</span></div>
           <div id="listaIntegrantes" class="vacio">Todavía no hay integrantes.</div>
           <button id="continuarGastos" type="button">Continuar con los gastos</button>
+        </div>
+      </section>
+
+      <!-- SECCIÓN DE GASTOS: formulario, historial y opciones para editar o eliminar gastos. -->
+      <section id="gastos" class="dosPaneles oculto">
+        <div class="tarjeta">
+          <p class="etiqueta">PASO 2</p>
+          <h2 id="tituloFormularioGasto">Registra un gasto</h2>
+          <form id="formularioGasto">
+            <label for="concepto">Concepto</label>
+            <input id="concepto" type="text" placeholder="Ej. Cena">
+            <div class="camposJuntos">
+              <div><label for="valor">Valor</label><input id="valor" type="number" min="0.01" step="0.01" placeholder="0,00"></div>
+              <div><label for="fecha">Fecha</label><input id="fecha" type="date"></div>
+            </div>
+            <label for="pagador">¿Quién pagó?</label>
+            <select id="pagador"></select>
+            <label>¿Quiénes participaron?</label>
+            <div id="opcionesParticipantes" class="opciones"></div>
+            <button id="guardarGasto" type="submit">Agregar gasto</button>
+            <button id="cancelarEdicion" class="secundario oculto" type="button">Cancelar edición</button>
+          </form>
+          <p id="mensajeGasto" class="mensaje"></p>
+        </div>
+        <div class="tarjeta panelLista">
+          <div class="tituloLista"><h2>Historial</h2><span id="numeroGastos">0 gastos</span></div>
+          <div id="listaGastos" class="vacio">Todavía no hay gastos.</div>
+          <button id="generarResumen" type="button">Generar resumen</button>
         </div>
       </section>
     </section>
