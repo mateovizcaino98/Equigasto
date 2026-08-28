@@ -201,3 +201,44 @@ function calcularPagos(balances) {
   document.getElementById("listaPagos").innerHTML = contenido;
 }
 
+// VALIDACIONES Y EVENTOS DE LOS FORMULARIOS: creación del grupo.
+formularioGrupo.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+  const nombre = document.getElementById("nombreGrupo").value;
+  if (nombre == "") { mostrarMensaje("mensajeGrupo", "Escribe un nombre para continuar.", true); }
+  else { document.getElementById("tituloGrupo").innerHTML = nombre; document.getElementById("inicioAplicacion").classList.add("oculto"); document.getElementById("contenidoAplicacion").classList.remove("oculto"); }
+});
+
+// VALIDACIONES Y EVENTOS DE LOS FORMULARIOS: registro de integrantes.
+formularioIntegrante.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+  const nombre = document.getElementById("nombreIntegrante").value;
+  let repetido = false;
+  let i;
+  for (i = 0; i < integrantes.length; i++) { if (integrantes[i].toLowerCase() == nombre.toLowerCase()) { repetido = true; } }
+  if (nombre == "") { mostrarMensaje("mensajeIntegrante", "Escribe un nombre.", true); }
+  else if (repetido == true) { mostrarMensaje("mensajeIntegrante", "Esa persona ya existe.", true); }
+  else { integrantes.push(nombre); document.getElementById("nombreIntegrante").value = ""; mostrarMensaje("mensajeIntegrante", "Integrante agregado.", false); actualizarIntegrantes(); }
+});
+
+// VALIDACIONES Y EVENTOS DE LOS FORMULARIOS: creación o actualización de gastos válidos.
+formularioGasto.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+  const concepto = document.getElementById("concepto").value;
+  const valorIngresado = document.getElementById("valor").value;
+  const formatoValido = /^\d+(\.\d{1,2})?$/.test(valorIngresado);
+  const valor = Math.round(Number(valorIngresado) * 100);
+  const fecha = document.getElementById("fecha").value;
+  const pagador = document.getElementById("pagador").value;
+  const participantes = obtenerParticipantes();
+  if (concepto == "" || formatoValido == false || valor <= 0 || fecha == "" || pagador == "" || participantes.length == 0) { mostrarMensaje("mensajeGasto", "Completa todos los datos y usa máximo dos decimales.", true); }
+  else {
+    const gasto = { concepto: concepto, valor: valor, fecha: fecha, pagador: pagador, participantes: participantes };
+    if (gastoEditado == -1) { gastos.push(gasto); }
+    else { gastos[gastoEditado] = gasto; }
+    actualizarGastos();
+    limpiarFormularioGasto();
+    mostrarMensaje("mensajeGasto", "Gasto guardado.", false);
+  }
+});
+
