@@ -242,3 +242,11 @@ formularioGasto.addEventListener("submit", function (evento) {
   }
 });
 
+// NAVEGACIÓN Y REINICIO: conecta pestañas, exige dos integrantes y confirma un nuevo inicio.
+document.getElementById("botonIntegrantes").onclick = function () { mostrarSeccion("integrantes"); };
+document.getElementById("botonGastos").onclick = function () { if (integrantes.length < 2) { alert("Agrega al menos dos integrantes."); } else { mostrarSeccion("gastos"); } };
+document.getElementById("botonResumen").onclick = function () { mostrarSeccion("resumen"); };
+document.getElementById("continuarGastos").onclick = document.getElementById("botonGastos").onclick;
+document.getElementById("generarResumen").onclick = function () { mostrarSeccion("resumen"); };
+document.getElementById("cancelarEdicion").onclick = function () { limpiarFormularioGasto(); };
+document.getElementById("reiniciar").onclick = function () { if (confirm("¿Deseas empezar de nuevo?") == true) { location.reload(); } };
