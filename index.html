@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- CONFIGURACIÓN DEL DOCUMENTO: idioma, adaptación, título y conexión con styles.css. -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,14 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- ENCABEZADO: identidad visual, logotipo, nombre y frase descriptiva de EquiGasto. -->
   <header>
     <a class="logo" href="#inicio"><span>E</span> EquiGasto</a>
     <p>Gastos grupales sin enredos</p>
   </header>
 
   <main id="inicio">
+    <!-- PANTALLA DE INICIO Y CREACIÓN DEL GRUPO: presentación e ingreso del nombre del grupo. -->
     <section id="inicioAplicacion" class="inicio">
       <div class="bienvenida">
         <p class="etiqueta">CUENTAS CLARAS, AMISTADES LARGAS</p>
@@ -33,6 +36,7 @@
     </section>
 
     <section id="contenidoAplicacion" class="aplicacion oculto">
+      <!-- ENCABEZADO Y NAVEGACIÓN DE LA APLICACIÓN: nombre, reinicio y pestañas principales. -->
       <div class="encabezadoGrupo">
         <div>
           <p class="etiqueta">TU GRUPO</p>
@@ -47,6 +51,7 @@
         <button id="botonResumen" class="pestana" type="button">3. Resumen</button>
       </nav>
 
+      <!-- SECCIÓN DE INTEGRANTES: formulario, lista de personas registradas y cantidad. -->
       <section id="integrantes" class="dosPaneles">
         <div class="tarjeta">
           <p class="etiqueta">PASO 1</p>
@@ -92,9 +97,33 @@
           <button id="generarResumen" type="button">Generar resumen</button>
         </div>
       </section>
+
+      <!-- SECCIÓN DE RESUMEN: total, detalle de gastos, distribución y balance por integrante. -->
+      <section id="resumen" class="oculto">
+        <div class="cabeceraResumen">
+          <div><p class="etiqueta">PASO 3</p><h2>Resumen del grupo</h2></div>
+          <div class="total"><span>Total gastado</span><strong id="totalGastado">$0</strong></div>
+        </div>
+        <div class="tarjeta detalleResumen">
+          <div class="tituloLista"><h2>Detalle de gastos</h2><span id="numeroGastosResumen">0 gastos</span></div>
+          <div class="contenedorTablaResumen">
+            <table class="tablaResumen">
+              <thead>
+                <tr><th>Gasto</th><th>Fecha</th><th>Valor</th><th>Pagó</th><th>Participaron</th></tr>
+              </thead>
+              <tbody id="gastosResumen"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tituloDivision"><p class="etiqueta">DISTRIBUCIÓN</p><h2>División por integrante</h2></div>
+        <div id="balances" class="balances"></div>
+        <!-- PAGOS PARA SALDAR: espacio para indicar quién paga a quién y cuánto. -->
+        <div class="tarjeta pagos"><h2>Pagos para saldar</h2><div id="listaPagos"></div></div>
+      </section>
     </section>
   </main>
 
+  <!-- PIE DE PÁGINA Y CONEXIÓN CON JAVASCRIPT: cierre visual y carga del comportamiento. -->
   <footer>Hecho para compartir, pensado para entender.</footer>
   <script src="script.js"></script>
 </body>
