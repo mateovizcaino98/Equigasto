@@ -13,7 +13,6 @@
   </header>
 
   <main id="inicio">
-    <!-- PANTALLA DE INICIO Y CREACIÓN DEL GRUPO: presentación e ingreso del nombre del grupo. -->
     <section id="inicioAplicacion" class="inicio">
       <div class="bienvenida">
         <p class="etiqueta">CUENTAS CLARAS, AMISTADES LARGAS</p>
@@ -31,6 +30,42 @@
         </form>
         <p id="mensajeGrupo" class="mensaje"></p>
       </div>
+    </section>
+
+    <section id="contenidoAplicacion" class="aplicacion oculto">
+      <!-- ENCABEZADO Y NAVEGACIÓN DE LA APLICACIÓN: nombre, reinicio y pestañas principales. -->
+      <div class="encabezadoGrupo">
+        <div>
+          <p class="etiqueta">TU GRUPO</p>
+          <h1 id="tituloGrupo"></h1>
+        </div>
+        <button id="reiniciar" class="secundario" type="button">Crear otro grupo</button>
+      </div>
+
+      <nav>
+        <button id="botonIntegrantes" class="pestana activa" type="button">1. Integrantes</button>
+        <button id="botonGastos" class="pestana" type="button">2. Gastos</button>
+        <button id="botonResumen" class="pestana" type="button">3. Resumen</button>
+      </nav>
+
+      <!-- SECCIÓN DE INTEGRANTES: formulario, lista de personas registradas y cantidad. -->
+      <section id="integrantes" class="dosPaneles">
+        <div class="tarjeta">
+          <p class="etiqueta">PASO 1</p>
+          <h2>Agrega integrantes</h2>
+          <form id="formularioIntegrante">
+            <label for="nombreIntegrante">Nombre</label>
+            <input id="nombreIntegrante" type="text" placeholder="Ej. Valentina">
+            <button type="submit">Agregar integrante</button>
+          </form>
+          <p id="mensajeIntegrante" class="mensaje"></p>
+        </div>
+        <div class="tarjeta panelLista">
+          <div class="tituloLista"><h2>El grupo</h2><span id="numeroIntegrantes">0 personas</span></div>
+          <div id="listaIntegrantes" class="vacio">Todavía no hay integrantes.</div>
+          <button id="continuarGastos" type="button">Continuar con los gastos</button>
+        </div>
+      </section>
     </section>
   </main>
 
