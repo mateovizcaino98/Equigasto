@@ -57,7 +57,49 @@ header {
   border-radius: 12px;
 }
 
+/*Pantalla de inicio y distribucion*/
+.inicio,
+.aplicacion {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  padding: 32px 18px 56px;
+}
+
+.inicio {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bienvenida {
+  padding-top: 8px;
+}
+
+.bienvenida h1,
+.encabezadoGrupo h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  line-height: 1.02;
+  letter-spacing: -1.4px;
+}
+
+.bienvenida > p:last-child {
+  margin: 20px 0 0;
+  color: var(--gris);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
 /*tarjetas y bonotones*/
+.etiqueta {
+  margin: 0 0 12px;
+  color: var(--verde);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+}
+
 .tarjeta {
   width: 100%;
   padding: 24px 20px;
@@ -65,6 +107,44 @@ header {
   border: 1px solid var(--borde);
   border-radius: 18px;
   box-shadow: 0 12px 35px rgba(30, 65, 80, 0.08);
+}
+
+.tarjeta h2,
+.cabeceraResumen h2 {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+}
+
+.tarjeta > p {
+  color: var(--gris);
+  line-height: 1.45;
+}
+
+label {
+  display: block;
+  margin: 20px 0 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 48px;
+  padding: 13px 14px;
+  color: var(--azul);
+  background: #fbfcfc;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid rgba(63, 155, 126, 0.16);
+  border-color: var(--verde);
 }
 
 button {
@@ -79,6 +159,68 @@ button {
   font: inherit;
   font-weight: bold;
   cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.secundario {
+  color: var(--azul);
+  background: transparent;
+  border: 1px solid var(--borde);
+}
+
+.mensaje {
+  min-height: 18px;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/*Ecabeado del grupo y navegacion*/
+.encabezadoGrupo {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.encabezadoGrupo h1 {
+  overflow-wrap: anywhere;
+  font-size: 38px;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 26px -18px 22px;
+  padding: 8px 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  background: var(--crema);
+  border-top: 1px solid var(--borde);
+  border-bottom: 1px solid var(--borde);
+}
+
+.pestana {
+  min-height: 43px;
+  margin: 0;
+  padding: 9px 5px;
+  color: var(--gris);
+  background: transparent;
+  border-radius: 9px;
+  font-size: 12px;
+}
+
+.pestana.activa {
+  color: var(--azul);
+  background: var(--blanco);
+  box-shadow: 0 4px 14px rgba(30, 65, 80, 0.08);
 }
 
 /*integrantes y gastos*/ 
