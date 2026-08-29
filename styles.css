@@ -25,6 +25,7 @@ body {
   background: var(--crema);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 /*Encabezados*/
 header {
   min-height: 64px;
@@ -55,6 +56,7 @@ header {
   background: var(--verde);
   border-radius: 12px;
 }
+
 /*tarjetas y bonotones*/
 .tarjeta {
   width: 100%;
@@ -78,6 +80,7 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
+
 /*integrantes y gastos*/ 
 .dosPaneles {
   display: flex;
@@ -112,3 +115,18 @@ button {
 
 .positivo { color: var(--verde); }
 .negativo { color: var(--rojo); }
+
+/*adaptacion de pantalla*/
+@media (min-width: 600px) {
+  header { padding: 10px 7%; justify-content: space-between; }
+  .inicio, .aplicacion { padding-left: 7%; padding-right: 7%; }
+  .camposJuntos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .balances { display: grid; grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 900px) {
+  .inicio { width: min(1120px, 86%); display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 8%; }
+  .dosPaneles { display: grid; grid-template-columns: .8fr 1.2fr; gap: 24px; }
+  .balances { grid-template-columns: repeat(3, 1fr); }
+  button:hover { background: var(--azul); }
+}
