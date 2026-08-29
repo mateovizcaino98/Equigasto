@@ -496,3 +496,35 @@ nav {
 .pagos { margin-top: 18px; }
 .pago { padding: 14px 0; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--borde); }
 footer { padding: 18px; color: var(--gris); text-align: center; font-size: 12px; }
+
+/*Adaptacion de tamaños*/
+@media (min-width: 600px) {
+  header { padding: 10px 7%; justify-content: space-between; }
+  header > p { display: block; color: var(--gris); font-size: 13px; }
+  .inicio, .aplicacion { padding-left: 7%; padding-right: 7%; }
+  .bienvenida h1 { font-size: 54px; }
+  .encabezadoGrupo { flex-direction: row; align-items: end; justify-content: space-between; }
+  .encabezadoGrupo button { width: auto; }
+  nav { margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; position: static; background: transparent; border-top: 0; }
+  .pestana { font-size: 14px; }
+  .camposJuntos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  /* En tablets y pantallas mayores, el detalle del resumen adopta formato de tabla. */
+  .contenedorTablaResumen { overflow-x: auto; }
+  .tablaResumen { min-width: 680px; }
+  .tablaResumen thead { display: table-header-group; }
+  .tablaResumen tr { display: table-row; padding: 0; border-bottom: 0; }
+  .tablaResumen th { padding: 12px 10px; color: var(--gris); border-bottom: 1px solid var(--borde); font-size: 12px; text-align: left; }
+  .tablaResumen td { display: table-cell; padding: 14px 10px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+  .tablaResumen td::before { content: none; }
+  .tablaResumen .sinGastosResumen { display: table-cell; padding: 24px 10px; }
+  .balances { display: grid; grid-template-columns: 1fr 1fr; }
+  .pago { flex-direction: row; justify-content: space-between; }
+}
+@media (min-width: 900px) {
+  .inicio { width: min(1120px, 86%); padding-left: 0; padding-right: 0; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 8%; }
+  .aplicacion { width: min(1180px, 90%); padding-left: 0; padding-right: 0; }
+  .bienvenida h1 { font-size: 68px; }
+  .dosPaneles { display: grid; grid-template-columns: .8fr 1.2fr; align-items: start; gap: 24px; }
+  .balances { grid-template-columns: repeat(3, 1fr); }
+  button:hover { background: var(--azul); }
+}
