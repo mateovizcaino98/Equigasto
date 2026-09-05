@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EquiGasto</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
   <!-- ENCABEZADO: identidad visual, logotipo, nombre y frase descriptiva de EquiGasto. -->
@@ -61,6 +62,9 @@
             <button type="submit">Agregar integrante</button>
           </form>
           <p id="mensajeIntegrante" class="mensaje"></p>
+          <label for="cargarExcel">Cargar un Excel</label>
+          <input id="cargarExcel" type="file" accept=".xlsx,.xls">
+          <p id="mensajeCargaExcel" class="mensaje"></p>
         </div>
         <div class="tarjeta panelLista">
           <div class="tituloLista"><h2>El grupo</h2><span id="numeroIntegrantes">0 personas</span></div>
@@ -117,7 +121,15 @@
         <div class="tituloDivision"><p class="etiqueta">DISTRIBUCIÓN</p><h2>División por integrante</h2></div>
         <div id="balances" class="balances"></div>
         <!-- PAGOS PARA SALDAR: espacio para indicar quién paga a quién y cuánto. -->
-        <div class="tarjeta pagos"><h2>Pagos para saldar</h2><div id="listaPagos"></div></div>
+        <div class="tarjeta pagos">
+          <h2>Pagos para saldar</h2>
+          <div id="listaPagos"></div>
+          <div class="accionesResumen">
+            <button id="exportarExcel" type="button">Descargar Excel</button>
+            <button id="compartirWhatsApp" class="secundario" type="button">Compartir por WhatsApp</button>
+          </div>
+          <p id="mensajeExportacion" class="mensaje"></p>
+        </div>
       </section>
     </section>
   </main>
