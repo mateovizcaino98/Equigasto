@@ -29,7 +29,7 @@ function mostrarSeccion(id) {
 }
 
 function dinero(centavos) {
-  return "$" + (centavos / 100).toLocaleString("es-CO", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return "$" + (centavos / 100).toLocaleString("es-EC", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 function calcularDatosResumen() {
